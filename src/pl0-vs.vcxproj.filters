@@ -1,0 +1,162 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Ast">
+      <UniqueIdentifier>{f3aab2b8-e75d-469a-b736-6357afc86ee4}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="DotGenerator.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Evaluator.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Lexer.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Parser.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Token.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ast\AdditionExpression.hpp">
+      <Filter>Ast</Filter>
+    </ClInclude>
+    <ClInclude Include="Ast\AssignmentStatement.hpp">
+      <Filter>Ast</Filter>
+    </ClInclude>
+    <ClInclude Include="Ast\Ast.hpp">
+      <Filter>Ast</Filter>
+    </ClInclude>
+    <ClInclude Include="Ast\BeginStatement.hpp">
+      <Filter>Ast</Filter>
+    </ClInclude>
+    <ClInclude Include="Ast\BinaryCondition.hpp">
+      <Filter>Ast</Filter>
+    </ClInclude>
+    <ClInclude Include="Ast\BinaryExpression.hpp">
+      <Filter>Ast</Filter>
+    </ClInclude>
+    <ClInclude Include="Ast\Block.hpp">
+      <Filter>Ast</Filter>
+    </ClInclude>
+    <ClInclude Include="Ast\CallStatement.hpp">
+      <Filter>Ast</Filter>
+    </ClInclude>
+    <ClInclude Include="Ast\Condition.hpp">
+      <Filter>Ast</Filter>
+    </ClInclude>
+    <ClInclude Include="Ast\Constant.hpp">
+      <Filter>Ast</Filter>
+    </ClInclude>
+    <ClInclude Include="Ast\DivisionExpression.hpp">
+      <Filter>Ast</Filter>
+    </ClInclude>
+    <ClInclude Include="Ast\EqualCondition.hpp">
+      <Filter>Ast</Filter>
+    </ClInclude>
+    <ClInclude Include="Ast\Expression.hpp">
+      <Filter>Ast</Filter>
+    </ClInclude>
+    <ClInclude Include="Ast\GreaterEqualCondition.hpp">
+      <Filter>Ast</Filter>
+    </ClInclude>
+    <ClInclude Include="Ast\GreaterThanCondition.hpp">
+      <Filter>Ast</Filter>
+    </ClInclude>
+    <ClInclude Include="Ast\Identifier.hpp">
+      <Filter>Ast</Filter>
+    </ClInclude>
+    <ClInclude Include="Ast\IfStatement.hpp">
+      <Filter>Ast</Filter>
+    </ClInclude>
+    <ClInclude Include="Ast\LessEqualCondition.hpp">
+      <Filter>Ast</Filter>
+    </ClInclude>
+    <ClInclude Include="Ast\LessThanCondition.hpp">
+      <Filter>Ast</Filter>
+    </ClInclude>
+    <ClInclude Include="Ast\MultiplicationExpression.hpp">
+      <Filter>Ast</Filter>
+    </ClInclude>
+    <ClInclude Include="Ast\NegationExpression.hpp">
+      <Filter>Ast</Filter>
+    </ClInclude>
+    <ClInclude Include="Ast\Node.hpp">
+      <Filter>Ast</Filter>
+    </ClInclude>
+    <ClInclude Include="Ast\NotEqualCondition.hpp">
+      <Filter>Ast</Filter>
+    </ClInclude>
+    <ClInclude Include="Ast\Number.hpp">
+      <Filter>Ast</Filter>
+    </ClInclude>
+    <ClInclude Include="Ast\OddCondition.hpp">
+      <Filter>Ast</Filter>
+    </ClInclude>
+    <ClInclude Include="Ast\Procedure.hpp">
+      <Filter>Ast</Filter>
+    </ClInclude>
+    <ClInclude Include="Ast\Program.hpp">
+      <Filter>Ast</Filter>
+    </ClInclude>
+    <ClInclude Include="Ast\ReadStatement.hpp">
+      <Filter>Ast</Filter>
+    </ClInclude>
+    <ClInclude Include="Ast\Statement.hpp">
+      <Filter>Ast</Filter>
+    </ClInclude>
+    <ClInclude Include="Ast\SubtractionExpression.hpp">
+      <Filter>Ast</Filter>
+    </ClInclude>
+    <ClInclude Include="Ast\UnaryCondition.hpp">
+      <Filter>Ast</Filter>
+    </ClInclude>
+    <ClInclude Include="Ast\UnaryExpression.hpp">
+      <Filter>Ast</Filter>
+    </ClInclude>
+    <ClInclude Include="Ast\Visitor.hpp">
+      <Filter>Ast</Filter>
+    </ClInclude>
+    <ClInclude Include="Ast\WhileStatement.hpp">
+      <Filter>Ast</Filter>
+    </ClInclude>
+    <ClInclude Include="Ast\WriteStatement.hpp">
+      <Filter>Ast</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="DotGenerator.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Evaluator.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Parser.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Lexer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Lexer.re" />
+  </ItemGroup>
+</Project>
