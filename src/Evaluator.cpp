@@ -44,12 +44,15 @@ void Evaluator::visit(Ast::Procedure& procedure)
 
 void Evaluator::visit(Ast::AssignmentStatement& statement)
 {
-    std::vector<Scope> sv(scopes);
+    std::vector<Scope*> sv;
+    for (auto& s : scopes) {
+        sv.push_back(&s);
+    }
     std::reverse(sv.begin(), sv.end());
 
-    for (auto& scope : sv) {
-        auto it = scope.variables.find(statement.left->name);
-        if (it != scope.variables.end()) {
+    for (auto scope : sv) {
+        auto it = scope->variables.find(statement.left->name);
+        if (it != scope->variables.end()) {
             statement.right->accept(*this);
             it->second = stack.top();
             return;
@@ -63,12 +66,15 @@ void Evaluator::visit(Ast::AssignmentStatement& statement)
 
 void Evaluator::visit(Ast::CallStatement& statement)
 {
-    std::vector<Scope> sv(scopes);
+    std::vector<Scope*> sv;
+    for (auto& s : scopes) {
+        sv.push_back(&s);
+    }
     std::reverse(sv.begin(), sv.end());
 
-    for (const auto& scope : sv) {
-        auto it = scope.procedures.find(statement.callee->name);
-        if (it != scope.procedures.end()) {
+    for (const auto scope : sv) {
+        auto it = scope->procedures.find(statement.callee->name);
+        if (it != scope->procedures.end()) {
             it->second.get().accept(*this);
             return;
         }
@@ -81,12 +87,15 @@ void Evaluator::visit(Ast::CallStatement& statement)
 
 void Evaluator::visit(Ast::ReadStatement& statement)
 {
-    std::vector<Scope> sv(scopes);
+    std::vector<Scope*> sv;
+    for (auto& s : scopes) {
+        sv.push_back(&s);
+    }
     std::reverse(sv.begin(), sv.end());
 
-    for (auto& scope : sv) {
-        auto it = scope.variables.find(statement.identifier->name);
-        if (it != scope.variables.end()) {
+    for (auto scope : sv) {
+        auto it = scope->variables.find(statement.identifier->name);
+        if (it != scope->variables.end()) {
             int value;
             out << "> ";
             in >> value;
@@ -251,18 +260,21 @@ void Evaluator::visit(Ast::NegationExpression& expression)
 
 void Evaluator::visit(Ast::Identifier& identifier)
 {
-    std::vector<Scope> sv(scopes);
+    std::vector<Scope*> sv;
+    for (auto& s : scopes) {
+        sv.push_back(&s);
+    }
     std::reverse(sv.begin(), sv.end());
 
-    for (const auto& scope : sv) {
-        const auto constantIt = scope.constants.find(identifier.name);
-        if (constantIt != scope.constants.end()) {
+    for (const auto scope : sv) {
+        const auto constantIt = scope->constants.find(identifier.name);
+        if (constantIt != scope->constants.end()) {
             stack.push(constantIt->second);
             return;
         }
 
-        const auto variableIt = scope.variables.find(identifier.name);
-        if (variableIt != scope.variables.end()) {
+        const auto variableIt = scope->variables.find(identifier.name);
+        if (variableIt != scope->variables.end()) {
             stack.push(variableIt->second);
             return;
         }
