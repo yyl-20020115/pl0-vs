@@ -1,7 +1,5 @@
 #include "Lexer.hpp"
 
-//#include <boost/lexical_cast.hpp>
-
 namespace PL0 {
 
 Token::ID Lexer::operator()()
@@ -67,7 +65,6 @@ loop:
             int v = 0;
             _snscanf_s(lexeme, (cursor - lexeme), "%d", &v);
             value = v;
-            //value = boost::lexical_cast<int>(lexeme, cursor - lexeme);
             return ID::Number;
         }
 

@@ -1,6 +1,4 @@
 #include "Evaluator.hpp"
-
-//#include <boost/range/adaptors.hpp>
 #include <sstream>
 
 namespace PL0 {

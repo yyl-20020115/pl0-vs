@@ -1,6 +1,5 @@
 #include "Evaluator.hpp"
 #include "Parser.hpp"
-//#include <boost/filesystem.hpp>
 #include <iostream>
 #include <fstream>
 
@@ -11,15 +10,9 @@ void load_string_file(std::string const& p, std::string& str)
     if (file) {
         file.seekg(0, std::ios_base::_Seekend);
     }
-    //const boost::uintmax_t sz = filesystem::file_size(p);
     file.seekg(0, std::ios_base::end);
-
-    // 获取当前文件指针位置，也就是获得文件大小
     std::streampos fileSize = file.tellg();
-
-    // 文件指针移动到开头文件
     file.seekg(0, std::ios_base::beg);
-
     str.resize(static_cast<std::size_t>(fileSize), '\0');
     if (fileSize > 0u)
         file.read(&str[0], fileSize);
